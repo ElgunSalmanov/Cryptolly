@@ -1,0 +1,17 @@
+.header {
+  &-nav {
+    &-title {
+    }
+
+    &-list {
+      &-item {
+        color: #5d6588;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.active {
+  color: #fff;
+}
