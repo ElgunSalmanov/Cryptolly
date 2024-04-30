@@ -4,6 +4,10 @@ import Exchange from "./pages/exchange/Exchange";
 import Market from "./pages/market/Market";
 import Wallet from "./pages/wallet/Wallet";
 import NotFound from "./pages/notFound/NotFound";
+import Login from "./shared/login/Login";
+import Resgister from "./shared/register/Register";
+import ForgotPassword from "./shared/forgotPassword/ForgotPassword";
+import Loading from "./shared/loading/Loading";
 import { Suspense } from "react";
 import { BrowserRouter, useRoutes } from "react-router-dom";
 
@@ -32,6 +36,18 @@ function Routing() {
       ],
     },
     {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Resgister />,
+    },
+    {
+      path: "/forgot",
+      element: <ForgotPassword />,
+    },
+    {
       path: "*",
       element: <NotFound />,
     },
@@ -44,7 +60,7 @@ function Routing() {
   return (
     <>
       <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading />}>
           <Elements />
         </Suspense>
       </BrowserRouter>
