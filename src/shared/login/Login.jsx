@@ -59,7 +59,7 @@ function Login() {
     } else {
       setDisabled(false);
     }
-  }, [disabled, email, password]);
+  }, [email, password, emailError, passwordError]);
 
   return (
     <div className="container">

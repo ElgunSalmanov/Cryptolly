@@ -112,7 +112,16 @@ const Register = () => {
     } else {
       setDisabled(false);
     }
-  }, [disabled, email, password, firstName, lastName]);
+  }, [
+    email,
+    password,
+    firstName,
+    lastName,
+    emailError,
+    passwordError,
+    firstNameError,
+    lastNameError,
+  ]);
 
   return (
     <div className="container">

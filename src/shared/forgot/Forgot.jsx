@@ -97,7 +97,14 @@ function ForgotPassword() {
     } else {
       setDisabled(false);
     }
-  }, [disabled, email, password, newPassword]);
+  }, [
+    email,
+    password,
+    newPassword,
+    emailError,
+    passwordError,
+    newPasswordError,
+  ]);
 
   return (
     <div className="container">
