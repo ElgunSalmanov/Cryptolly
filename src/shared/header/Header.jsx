@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import search from "../../assets/icons/search.svg";
 import notification from "../../assets/icons/notification.svg";
@@ -10,6 +10,11 @@ function Header() {
   const [name, setName] = useState("John");
   const [surname, setSurname] = useState("Doe");
   const [image, setImage] = useState(user);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -18,7 +23,7 @@ function Header() {
           <h2 className="header-nav-title">
             Cryptolly<span className="header-nav-title-point">.</span>
           </h2>
-          <ul className="header-nav-list">
+          <ul onClick={() => setIsOpen(false)} className="header-nav-list">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -60,7 +65,7 @@ function Header() {
             src={notification}
             alt="notification"
           />
-          <div className="header-info-container">
+          <div onClick={toggleDropdown} className="header-info-container">
             <span className="header-info-container-name">
               {name} {surname}
             </span>
@@ -71,9 +76,24 @@ function Header() {
             />
             <img
               className="header-info-container-arrow"
+              style={{
+                transform: isOpen ? "rotate(180deg)" : "rotate(0)",
+                transition: "transform 0.7s",
+              }}
               src={arrow}
               alt="arrow"
             />
+          </div>
+          <div
+            className="header-info-popup"
+            style={{
+              display: isOpen ? "flex" : "none",
+            }}
+          >
+            <button className="header-info-popup-logout">Log out</button>
+            <Link to="/settings" className="header-info-popup-settings">
+              Settings
+            </Link>
           </div>
         </div>
       </header>

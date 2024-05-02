@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import component from "../../assets/logo/component.svg";
 import google from "../../assets/icons/google.svg";
 import vector from "../../assets/images/vector.svg";
 import "./login.scss";
 
 function Login() {
-  const [showType, setShowType] = useState(false);
   const [showEye, setShowEye] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [email, setEmail] = useState("");
@@ -52,7 +51,6 @@ function Login() {
 
   const showPassword = () => {
     setShowEye(!showEye);
-    setShowType(!showType);
   };
 
   useEffect(() => {
@@ -110,7 +108,7 @@ function Login() {
           </div>
           <div className="container-login-form-passblock">
             <input
-              type={showType ? "text" : "password"}
+              type={showEye ? "text" : "password"}
               value={password}
               onChange={validatePassword}
               className="container-login-form-passblock-password"
@@ -143,15 +141,15 @@ function Login() {
                 Remember password
               </p>
             </div>
-            <NavLink to="/forgot" className="container-login-form-pass-forgot">
+            <Link to="/forgot" className="container-login-form-pass-forgot">
               Forgot password
-            </NavLink>
+            </Link>
           </div>
           <button
             disabled={disabled}
             type="submit"
             style={{
-              background: disabled ? "#3f8ae0" : "#246cf9",
+              background: disabled ? "#6d849e" : "#246cf9",
               cursor: disabled ? "not-allowed" : "pointer",
             }}
             className="container-login-sign"
@@ -160,9 +158,9 @@ function Login() {
           </button>
           <p className="container-login-signup">
             Haven’t an account?{" "}
-            <NavLink to="/register" className="container-login-signup-link">
+            <Link to="/register" className="container-login-signup-link">
               Sign up for free
-            </NavLink>
+            </Link>
           </p>
         </form>
       </div>

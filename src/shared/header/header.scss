@@ -43,7 +43,7 @@
           outline: none;
           padding: 8px 8px 8px 0px;
           background: transparent;
-          color: #5d6588;
+          color: #8086a4;
           font-size: 16px;
         }
 
@@ -73,6 +73,47 @@
     &-notification {
       cursor: pointer;
     }
+
+    &-popup {
+      position: absolute;
+      flex-direction: column;
+      gap: 10px 0px;
+      top: 60px;
+      right: 20px;
+      width: 200px;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1;
+      background: #fff;
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+      animation: fadeIn 0.7s;
+
+      &-logout {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        color: #000;
+        background: #d8d8d8;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+      }
+
+      &-settings {
+        width: 95%;
+        padding: 5px;
+        border-radius: 5px;
+        color: #000;
+        background: #d8d8d8;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -83,5 +124,14 @@
 ::placeholder {
   font-size: 15px;
   letter-spacing: 0.5px;
-  color: #5d6588;
+  color: #8086a4;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

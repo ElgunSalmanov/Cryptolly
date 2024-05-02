@@ -16,7 +16,7 @@
     align-items: center;
     flex-direction: column;
     border-radius: 7px;
-    gap: 15px 0px;
+    gap: 10px 0px;
 
     &-info {
       width: 100%;
@@ -100,11 +100,11 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      row-gap: 15px;
+      gap: 10px 0px;
 
       &-email {
         width: 90%;
-        height: 45px;
+        height: 42px;
         background: rgba(47, 50, 65, 0.5);
         border: none;
         border-radius: 25px;
@@ -114,7 +114,7 @@
       }
 
       &-passblock {
-        width: 90%;
+        width: 91%;
         height: 45px;
         background: rgba(47, 50, 65, 0.5);
         border: none;

@@ -6,8 +6,9 @@ import Wallet from "./pages/wallet/Wallet";
 import NotFound from "./pages/notFound/NotFound";
 import Login from "./shared/login/Login";
 import Resgister from "./shared/register/Register";
-import ForgotPassword from "./shared/forgotPassword/ForgotPassword";
+import Forgot from "./shared/forgot/Forgot";
 import Loading from "./shared/loading/Loading";
+import Settings from "./shared/settings/Settings";
 import { Suspense } from "react";
 import { BrowserRouter, useRoutes } from "react-router-dom";
 
@@ -33,6 +34,10 @@ function Routing() {
           path: "/market",
           element: <Market />,
         },
+        {
+          path: "/settings",
+          element: <Settings />,
+        },
       ],
     },
     {
@@ -45,7 +50,7 @@ function Routing() {
     },
     {
       path: "/forgot",
-      element: <ForgotPassword />,
+      element: <Forgot />,
     },
     {
       path: "*",
