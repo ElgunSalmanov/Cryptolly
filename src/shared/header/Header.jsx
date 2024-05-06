@@ -91,7 +91,11 @@ function Header() {
             }}
           >
             <button className="header-info-popup-logout">Log out</button>
-            <Link to="/settings" className="header-info-popup-settings">
+            <Link
+              onClick={toggleDropdown}
+              to="/settings"
+              className="header-info-popup-settings"
+            >
               Settings
             </Link>
           </div>

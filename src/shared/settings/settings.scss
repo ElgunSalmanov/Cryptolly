@@ -1,0 +1,148 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 100px;
+
+  &-headline {
+    display: flex;
+    gap: 0px 15px;
+    width: 80%;
+    margin: 0 auto;
+
+    &-icon {
+      width: 40px;
+      height: 85px;
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        margin-block-end: 0px;
+      }
+
+      &-text {
+        margin-block-start: 0px;
+        color: #a5adcf;
+      }
+    }
+  }
+
+  &-container {
+    width: 80%;
+    height: 75vh;
+    background: #1e1f25;
+    border-radius: 15px;
+    margin: 0 auto;
+
+    &-profile {
+      display: flex;
+      align-items: center;
+      gap: 0px 20px;
+      padding: 30px 0px 0px 20px;
+
+      &-data {
+        display: flex;
+        align-items: center;
+        gap: 0px 10px;
+
+        &-image {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        &-container {
+          display: flex;
+          flex-direction: column;
+          gap: 5px 0px;
+
+          &-title {
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+          }
+
+          &-email {
+            font-size: 12px;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+            color: #a5adcf;
+          }
+        }
+      }
+
+      &-change {
+        padding: 10px;
+        border-radius: 25px;
+        font-size: 12px;
+        background: #246cf9;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: 0px 0px 10px 0px #246cf9;
+        }
+      }
+
+      &-delete {
+        width: 100px;
+        padding: 10px;
+        border-radius: 25px;
+        font-size: 12px;
+        background: #f92424;
+        border: 1px solid #f92424;
+        cursor: pointer;
+        color: #fff;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: 0px 0px 10px 0px #f92424;
+        }
+      }
+    }
+
+    &-personal {
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+
+      &-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px 20px;
+
+        &-container {
+          display: flex;
+          flex-direction: column;
+          gap: 10px 0px;
+        }
+
+        &-info {
+          font-size: 14px;
+        }
+
+        &-entry {
+          width: 100%;
+          height: 40px;
+          background: rgba(47, 50, 65, 0.5);
+          border: none;
+          border-radius: 25px;
+          text-indent: 15px;
+          outline: none;
+          color: #a5adcf;
+        }
+      }
+    }
+
+    &-crypto {
+      padding: 0px 25px;
+
+      &-content {
+        margin-block-start: 0px;
+      }
+    }
+  }
+}
