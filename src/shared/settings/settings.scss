@@ -138,11 +138,27 @@
     }
 
     &-crypto {
+      display: flex;
       padding: 0px 25px;
+      gap: 0px 50px;
 
       &-content {
         margin-block-start: 0px;
       }
+
+      &-container {
+        &-image {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
     }
   }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 10px;
+  height: 10px;
+  background: transparent;
 }

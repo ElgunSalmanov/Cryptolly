@@ -5,7 +5,8 @@ import crypto from "../../assets/icons/crypto.svg";
 import crypto1 from "../../assets/icons/crypto1.svg";
 import crypto2 from "../../assets/icons/crypto2.svg";
 import ellipse from "../../assets/icons/ellipse.svg";
-import arrow from "../../assets/icons/arrow.svg";
+import arrow from "../../assets/icons/down.svg";
+import calendar from "../../assets/icons/calendar.svg";
 import "./settings.scss";
 
 function Settings() {
@@ -13,6 +14,7 @@ function Settings() {
   const [surname, setSurname] = useState("Doe");
   const [email, setEmail] = useState("johndoe123@gmail.com");
   const [image, setImage] = useState(user);
+  const [time, setTime] = useState("2022-10-21");
 
   const changeImage = (image) => {
     const file = image.target.files[0];
@@ -118,9 +120,44 @@ function Settings() {
           </form>
         </div>
         <div className="settings-container-crypto">
-          <h5 className="settings-container-crypto-content">
+          <h4 className="settings-container-crypto-content">
             Crypto addresses
-          </h5>
+          </h4>
+          <div className="settings-container-crypto-container">
+            <img
+              className="settings-container-crypto-container-image"
+              src={crypto}
+              alt="crypto"
+            />
+            <img
+              className="settings-container-crypto-container-image"
+              src={crypto1}
+              alt="crypto"
+            />
+            <img
+              className="settings-container-crypto-container-image"
+              src={crypto2}
+              alt="crypto"
+            />
+            <img
+              className="settings-container-crypto-container-image"
+              src={ellipse}
+              alt="ellipse"
+            />
+            <img
+              className="settings-container-crypto-container-image"
+              src={arrow}
+              alt="arrow"
+            />
+          </div>
+          {/* <label htmlFor="date">Date of birth</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          /> */}
         </div>
       </div>
     </div>
