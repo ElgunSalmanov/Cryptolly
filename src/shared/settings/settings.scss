@@ -154,11 +154,56 @@
         }
       }
     }
+
+    &-date {
+      padding: 0px 25px;
+
+      &-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0px;
+
+        &-text {
+          font-size: 14px;
+        }
+
+        &-box {
+          width: 100%;
+          height: 40px;
+          display: flex;
+          position: relative;
+          align-items: center;
+          background: rgba(47, 50, 65, 0.5019607843);
+          border-radius: 25px;
+
+          &-calendar {
+            position: absolute;
+            right: 15px;
+            width: 18px;
+            padding: 0px 5px;
+            cursor: pointer;
+          }
+
+          &-select {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #a5adcf;
+            text-indent: 5px;
+          }
+        }
+      }
+    }
   }
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  width: 10px;
-  height: 10px;
+  width: 30px;
+  height: 30px;
   background: transparent;
+  cursor: pointer;
+  z-index: 100;
 }

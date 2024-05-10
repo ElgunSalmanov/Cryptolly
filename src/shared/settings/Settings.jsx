@@ -150,14 +150,28 @@ function Settings() {
               alt="arrow"
             />
           </div>
-          {/* <label htmlFor="date">Date of birth</label>
-          <input
-            type="date"
-            name="date"
-            id="date"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          /> */}
+        </div>
+        <div className="settings-container-date">
+          <form className="settings-container-date-form">
+            <label className="settings-container-date-form-text" htmlFor="date">
+              Date of birth
+            </label>
+            <div className="settings-container-date-form-box">
+              <img
+                className="settings-container-date-form-box-calendar"
+                src={calendar}
+                alt="calendar"
+              />
+              <input
+                className="settings-container-date-form-box-select"
+                type="date"
+                name="date"
+                id="date"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+              />
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -51,22 +51,8 @@ function ForgotPassword() {
   };
 
   const validateNewPassword = (newPassword) => {
-    if (newPassword.target.value.includes(" ")) {
-      setNewPasswordError("Password cannot contain spaces");
-      setDisabled(true);
-    } else if (
-      !/[!@#$%^&*]/.test(newPassword.target.value) &&
-      newPassword.target.value !== ""
-    ) {
-      setNewPasswordError(
-        "Password must contain at least one special character"
-      );
-      setDisabled(true);
-    } else if (
-      newPassword.target.value.length < 6 &&
-      newPassword.target.value !== ""
-    ) {
-      setNewPasswordError("Password must be at least 6 characters");
+    if (newPassword.target.value !== password) {
+      setNewPasswordError("Passwords do not match");
       setDisabled(true);
     } else {
       setNewPasswordError("");
