@@ -1,3 +1,5 @@
+@import "../../style/_mixins.scss";
+
 .header {
   display: flex;
   align-items: center;
@@ -5,12 +7,20 @@
   font-size: 14px;
   padding: 0px 20px;
 
+  @include mobile {
+    padding: 10px;
+  }
+
   &-nav {
     display: flex;
     align-items: center;
     gap: 0px 30px;
 
     &-title {
+      @include mobile {
+        display: none;
+      }
+
       &-point {
         color: #1a82ff;
       }
@@ -19,6 +29,10 @@
     &-list {
       display: flex;
       gap: 0px 30px;
+
+      @include mobile {
+        display: none;
+      }
 
       &-item {
         color: #5d6588;
@@ -62,12 +76,22 @@
       gap: 0px 10px;
       cursor: pointer;
 
+      &-name {
+        @include mobile {
+          display: none;
+        }
+      }
+
       &-user {
         width: 20%;
       }
 
       &-arrow {
         width: 15%;
+
+        @include mobile {
+          display: none;
+        }
       }
     }
 

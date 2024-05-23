@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Auth } from "../../api/auth";
 import component from "../../assets/logo/component.svg";
 import google from "../../assets/icons/google.svg";
 import vector from "../../assets/images/vector.svg";
@@ -12,6 +13,11 @@ function Login() {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  // Auth.login({
+  //   email,
+  //   password,
+  // });
 
   const validateEmail = (email) => {
     if (!/\S+@\S+\.\S+/.test(email.target.value) && email.target.value !== "") {

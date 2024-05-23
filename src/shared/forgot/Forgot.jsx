@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import component from "../../assets/logo/component.svg";
 import "./forgot.scss";
+import { Auth } from "../../api/auth";
 
 function ForgotPassword() {
   const [showEye, setShowEye] = useState(false);
@@ -9,10 +10,16 @@ function ForgotPassword() {
   const [disabled, setDisabled] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [newPasswordError, setNewPasswordError] = useState("");
+
+  // Auth.forgot({
+  //   email,
+  //   password,
+  //   repeatPassword,
+  // });
 
   const validateEmail = (email) => {
     if (!/\S+@\S+\.\S+/.test(email.target.value) && email.target.value !== "") {
@@ -50,8 +57,8 @@ function ForgotPassword() {
     setPassword(password.target.value);
   };
 
-  const validateNewPassword = (newPassword) => {
-    if (newPassword.target.value !== password) {
+  const validateRepeatPassword = (repeatPassword) => {
+    if (repeatPassword.target.value !== password) {
       setNewPasswordError("Passwords do not match");
       setDisabled(true);
     } else {
@@ -59,7 +66,7 @@ function ForgotPassword() {
       setDisabled(false);
     }
 
-    setNewPassword(newPassword.target.value);
+    setRepeatPassword(repeatPassword.target.value);
   };
 
   const showPassword = () => {
@@ -74,7 +81,7 @@ function ForgotPassword() {
     if (
       email === "" ||
       password === "" ||
-      newPassword === "" ||
+      repeatPassword === "" ||
       emailError ||
       passwordError ||
       newPasswordError
@@ -86,7 +93,7 @@ function ForgotPassword() {
   }, [
     email,
     password,
-    newPassword,
+    repeatPassword,
     emailError,
     passwordError,
     newPasswordError,
@@ -149,8 +156,8 @@ function ForgotPassword() {
           <div className="container-forgot-form-passblock">
             <input
               type={newShowEye ? "text" : "password"}
-              value={newPassword}
-              onChange={validateNewPassword}
+              value={repeatPassword}
+              onChange={validateRepeatPassword}
               className="container-forgot-form-passblock-password"
               placeholder="Enter confirm new password"
             />

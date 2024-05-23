@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Auth } from "../../api/auth";
 import component from "../../assets/logo/component.svg";
 import "./register.scss";
 
@@ -14,6 +15,13 @@ const Register = () => {
   const [passwordError, setPasswordError] = useState("");
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
+
+  // Auth.register({
+  //   firstName,
+  //   lastName,
+  //   email,
+  //   password,
+  // });
 
   const validateFirstName = (firstName) => {
     if (

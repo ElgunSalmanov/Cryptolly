@@ -4,6 +4,7 @@ import search from "../../assets/icons/search.svg";
 import notification from "../../assets/icons/notification.svg";
 import user from "../../assets/icons/user.svg";
 import arrow from "../../assets/icons/arrow.svg";
+import menu from "../../assets/icons/menu.svg";
 import "./header.scss";
 
 function Header() {
@@ -11,9 +12,14 @@ function Header() {
   const [surname, setSurname] = useState("Doe");
   const [image, setImage] = useState(user);
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDropdownOpen = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -23,6 +29,9 @@ function Header() {
           <h2 className="header-nav-title">
             Cryptolly<span className="header-nav-title-point">.</span>
           </h2>
+          <div className="header-nav-burger" onClick={toggleDropdownOpen}>
+            <img src={menu} alt="menu" />
+          </div>
           <ul onClick={() => setIsOpen(false)} className="header-nav-list">
             <NavLink
               to="/"

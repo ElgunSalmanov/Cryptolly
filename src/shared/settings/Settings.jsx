@@ -173,6 +173,25 @@ function Settings() {
             </div>
           </form>
         </div>
+        <div className="settings-container-remove">
+          <div className="settings-container-remove-box">
+            <h5 className="settings-container-remove-box-title">
+              Delete account
+            </h5>
+            <p className="settings-container-remove-box-content">
+              Closing your account can’t be undone. Please make sure your
+              account balance is $0.00 before you begin.
+            </p>
+          </div>
+          <button className="settings-container-remove-delete" type="submit">
+            Delete Account Now
+          </button>
+        </div>
+        <div className="settings-container-change">
+          <button className="settings-container-change-save">
+            Save Changes
+          </button>
+        </div>
       </div>
     </div>
   );
