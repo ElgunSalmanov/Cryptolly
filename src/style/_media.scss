@@ -1,0 +1,30 @@
+@media (max-width: 380px) {
+  .header-info-container-user {
+    width: 70%;
+  }
+
+  .header-info {
+    gap: 0px 10px !important;
+  }
+}
+
+@media (max-width: 395px) {
+  .header-info-container-user {
+    width: 70%;
+  }
+
+  .header-info {
+    gap: 0px 15px;
+  }
+
+  .header-nav-list {
+    width: 85%;
+    position: absolute;
+    display: flex;
+    right: 0;
+    font-size: 13px;
+    padding: 12px 0px 12px 0px;
+    background: #141518;
+    transition: all 0.7s ease-in-out;
+  }
+}

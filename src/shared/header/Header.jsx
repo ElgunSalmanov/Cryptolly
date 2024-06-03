@@ -12,14 +12,14 @@ function Header() {
   const [surname, setSurname] = useState("Doe");
   const [image, setImage] = useState(user);
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleDropdownOpen = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleMenuOpen = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -29,10 +29,14 @@ function Header() {
           <h2 className="header-nav-title">
             Cryptolly<span className="header-nav-title-point">.</span>
           </h2>
-          <div className="header-nav-burger" onClick={toggleDropdownOpen}>
+          <div className="header-nav-burger" onClick={toggleMenuOpen}>
             <img src={menu} alt="menu" />
           </div>
-          <ul onClick={() => setIsOpen(false)} className="header-nav-list">
+          <ul
+            onClick={() => setIsOpen(false)}
+            style={{ left: isMenuOpen ? "13%" : "-100%" }}
+            className="header-nav-list"
+          >
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -97,6 +101,7 @@ function Header() {
             className="header-info-popup"
             style={{
               display: isOpen ? "flex" : "none",
+              animation: isOpen ? "" : "fadeOut 0.7s ease",
             }}
           >
             <button className="header-info-popup-logout">Log out</button>
